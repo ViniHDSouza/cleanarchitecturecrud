@@ -1,4 +1,4 @@
-package br.com.cleanarchitecture.crud.application.usecases;
+package br.com.cleanarchitecture.crud.domain.usecases;
 
 import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuarios;
 import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;

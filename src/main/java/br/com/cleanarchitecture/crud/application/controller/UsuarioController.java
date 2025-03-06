@@ -1,7 +1,7 @@
-package br.com.cleanarchitecture.crud.infra.controller;
+package br.com.cleanarchitecture.crud.application.controller;
 
-import br.com.cleanarchitecture.crud.application.usecases.CriarUsuarioUseCase;
-import br.com.cleanarchitecture.crud.application.usecases.ListarUsuariosUseCase;
+import br.com.cleanarchitecture.crud.domain.usecases.CriarUsuarioUseCase;
+import br.com.cleanarchitecture.crud.domain.usecases.ListarUsuariosUseCase;
 import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;
 import org.springframework.web.bind.annotation.*;
 

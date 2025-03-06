@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "35901baf-30a0-4f4e-ad23-1109b99e035c",
+		"name": "09-clean-architecture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35241234",
+		"_collection_link": "https://lunar-satellite-542285.postman.co/workspace/ALURA---CARREIRA-JAVA~e248194b-5cbd-4a4e-8f16-168318be2e9f/collection/35241234-35901baf-30a0-4f4e-ad23-1109b99e035c?action=share&source=collection_link&creator=35241234"
+	},
+	"item": [
+		{
+			"name": "usuarios - todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuarios - gravar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cpf\": \"123.456.789-00\",\r\n  \"nome\": \"Jacqueline Oliveira\",\r\n  \"nascimento\": \"1990-09-09\",\r\n  \"email\": \"jacqueline.alterdata@gmail.com\",\r\n  \"telefone\": \"(11)1111-1111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

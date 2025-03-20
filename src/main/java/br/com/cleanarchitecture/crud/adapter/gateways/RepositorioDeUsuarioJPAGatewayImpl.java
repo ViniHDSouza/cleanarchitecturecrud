@@ -1,6 +1,6 @@
 package br.com.cleanarchitecture.crud.adapter.gateways;
 
-import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuarios;
+import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuariosGateway;
 import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;
 import br.com.cleanarchitecture.crud.adapter.persistence.UsuarioEntity;
 import br.com.cleanarchitecture.crud.adapter.persistence.UsuarioRepository;
@@ -9,12 +9,12 @@ import br.com.cleanarchitecture.crud.adapter.presenters.UsuarioEntityMapper;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RepositorioDeUsuarioJPA implements RepositorioDeUsuarios {
+public class RepositorioDeUsuarioJPAGatewayImpl implements RepositorioDeUsuariosGateway {
 
     private final UsuarioRepository usuarioRepository;
     private final UsuarioEntityMapper usuarioEntityMapper;
 
-    public RepositorioDeUsuarioJPA(UsuarioRepository usuarioRepository, UsuarioEntityMapper usuarioEntityMapper) {
+    public RepositorioDeUsuarioJPAGatewayImpl(UsuarioRepository usuarioRepository, UsuarioEntityMapper usuarioEntityMapper) {
         this.usuarioRepository = usuarioRepository;
         this.usuarioEntityMapper = usuarioEntityMapper;
     }

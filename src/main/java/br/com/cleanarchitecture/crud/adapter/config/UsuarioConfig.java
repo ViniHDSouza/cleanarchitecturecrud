@@ -1,10 +1,10 @@
 package br.com.cleanarchitecture.crud.adapter.config;
 
 
-import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuarios;
+import br.com.cleanarchitecture.crud.adapter.gateways.RepositorioDeUsuarioJPAGatewayImpl;
+import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuariosGateway;
 import br.com.cleanarchitecture.crud.application.usecases.CriarUsuarioUseCase;
 import br.com.cleanarchitecture.crud.application.usecases.ListarUsuariosUseCase;
-import br.com.cleanarchitecture.crud.adapter.gateways.RepositorioDeUsuarioJPA;
 import br.com.cleanarchitecture.crud.adapter.persistence.UsuarioRepository;
 import br.com.cleanarchitecture.crud.adapter.presenters.UsuarioEntityMapper;
 import org.springframework.context.annotation.Bean;
@@ -14,18 +14,18 @@ import org.springframework.context.annotation.Configuration;
 public class UsuarioConfig {
 
     @Bean
-    CriarUsuarioUseCase criarUsuario(RepositorioDeUsuarios repositorioDeUsuario){
+    CriarUsuarioUseCase criarUsuario(RepositorioDeUsuariosGateway repositorioDeUsuario){
         return new CriarUsuarioUseCase(repositorioDeUsuario);
     }
 
     @Bean
-    ListarUsuariosUseCase listarUsuarios(RepositorioDeUsuarios repositorioDeUsuario){
+    ListarUsuariosUseCase listarUsuarios(RepositorioDeUsuariosGateway repositorioDeUsuario){
         return new ListarUsuariosUseCase(repositorioDeUsuario);
     }
 
     @Bean
-    RepositorioDeUsuarioJPA criarRepositorioJpa(UsuarioRepository repositorio, UsuarioEntityMapper mapper){
-        return new RepositorioDeUsuarioJPA(repositorio, mapper);
+    RepositorioDeUsuarioJPAGatewayImpl criarRepositorioJpa(UsuarioRepository repositorio, UsuarioEntityMapper mapper){
+        return new RepositorioDeUsuarioJPAGatewayImpl(repositorio, mapper);
     }
 
     @Bean

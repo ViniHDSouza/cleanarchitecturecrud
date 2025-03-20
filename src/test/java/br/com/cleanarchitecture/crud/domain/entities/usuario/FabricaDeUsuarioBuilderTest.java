@@ -11,8 +11,10 @@ class FabricaDeUsuarioBuilderTest {
 
     @Test
     void deveCriarUsuarioComNomeCpfNascimento() {
-        FabricaDeUsuarioBuilder builder = new FabricaDeUsuarioBuilder();
-        Usuario usuario = builder.comNomeCpfNascimento("Jacque", "123.456.789-99", LocalDate.parse("1990-09-08"),"teste@teste.com","(11)1111-1111");
+        UsuarioFactory factoryUsuario = new UsuarioBuilderFactory();
+
+        //FabricaDeUsuarioBuilder builder = new FabricaDeUsuarioBuilder();
+        Usuario usuario = factoryUsuario.criarUsuario("Jacque", "123.456.789-99", LocalDate.parse("1990-09-08"),"teste@teste.com","(11)1111-1111");
 
         assertNotNull(usuario);
         assertEquals("Jacque", usuario.getNome());
@@ -22,11 +24,13 @@ class FabricaDeUsuarioBuilderTest {
 
     @Test
     void deveIncluirEnderecoNoUsuario() {
-        FabricaDeUsuarioBuilder builder = new FabricaDeUsuarioBuilder();
-        Usuario usuario = builder.comNomeCpfNascimento("Jacque", "123.456.789-99", LocalDate.parse("1990-09-08"),"teste@teste.com","(11)1111-1111");
-        usuario = builder.incluiEndereco("12.345-678", 123, "Apto 101");
+        //FabricaDeUsuarioBuilder builder = new FabricaDeUsuarioBuilder();
+        UsuarioFactory factoryUsuario = new UsuarioBuilderFactory();
 
-        Endereco endereco = usuario.getEndereco();
+        Usuario usuario = factoryUsuario.criarUsuario("Jacque", "123.456.789-99", LocalDate.parse("1990-09-08"),"teste@teste.com","(11)1111-1111");
+        Endereco endereco = factoryUsuario.criarEndereco("12.345-678", 123, "Apto 101");
+
+        //Endereco endereco = usuario.getEndereco();
         assertNotNull(endereco);
         assertEquals("12.345-678", endereco.getCep().getDocument());
         assertEquals(123, endereco.getNumero());

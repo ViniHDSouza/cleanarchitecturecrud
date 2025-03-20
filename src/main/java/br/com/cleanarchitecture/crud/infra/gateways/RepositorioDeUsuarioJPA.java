@@ -4,6 +4,7 @@ import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuarios;
 import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;
 import br.com.cleanarchitecture.crud.infra.persistence.UsuarioEntity;
 import br.com.cleanarchitecture.crud.infra.persistence.UsuarioRepository;
+import br.com.cleanarchitecture.crud.infra.presenters.UsuarioEntityMapper;
 
 import java.util.List;
 import java.util.stream.Collectors;

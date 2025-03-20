@@ -1,4 +1,4 @@
-package br.com.cleanarchitecture.crud.infra.gateways;
+package br.com.cleanarchitecture.crud.infra.presenters;
 
 import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;
 import br.com.cleanarchitecture.crud.infra.persistence.UsuarioEntity;

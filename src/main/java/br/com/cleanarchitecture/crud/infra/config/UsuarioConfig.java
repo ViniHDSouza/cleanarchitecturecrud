@@ -2,11 +2,11 @@ package br.com.cleanarchitecture.crud.infra.config;
 
 
 import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuarios;
-import br.com.cleanarchitecture.crud.domain.usecases.CriarUsuarioUseCase;
-import br.com.cleanarchitecture.crud.domain.usecases.ListarUsuariosUseCase;
+import br.com.cleanarchitecture.crud.application.usecases.CriarUsuarioUseCase;
+import br.com.cleanarchitecture.crud.application.usecases.ListarUsuariosUseCase;
 import br.com.cleanarchitecture.crud.infra.gateways.RepositorioDeUsuarioJPA;
-import br.com.cleanarchitecture.crud.infra.gateways.UsuarioEntityMapper;
 import br.com.cleanarchitecture.crud.infra.persistence.UsuarioRepository;
+import br.com.cleanarchitecture.crud.infra.presenters.UsuarioEntityMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

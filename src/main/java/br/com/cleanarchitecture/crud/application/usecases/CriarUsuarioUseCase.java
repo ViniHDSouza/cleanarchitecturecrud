@@ -1,4 +1,4 @@
-package br.com.cleanarchitecture.crud.domain.usecases;
+package br.com.cleanarchitecture.crud.application.usecases;
 
 import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuarios;
 import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;
@@ -12,7 +12,6 @@ public class CriarUsuarioUseCase {
     }
 
     public Usuario cadastrarUsuario(Usuario usuario) {
-        Usuario usuarioSalvo = repositorioDeUsuarios.cadastrarUsuario(usuario);
-        return usuarioSalvo;
+        return repositorioDeUsuarios.cadastrarUsuario(usuario);
     }
 }

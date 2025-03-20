@@ -1,4 +1,4 @@
-package br.com.cleanarchitecture.crud.application.controller;
+package br.com.cleanarchitecture.crud.infra.controller;
 
 import java.time.LocalDate;
 

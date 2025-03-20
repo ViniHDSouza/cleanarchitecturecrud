@@ -1,16 +1,16 @@
-package br.com.cleanarchitecture.crud.application.controller;
+package br.com.cleanarchitecture.crud.infra.controller;
 
-import br.com.cleanarchitecture.crud.domain.usecases.CriarUsuarioUseCase;
-import br.com.cleanarchitecture.crud.domain.usecases.ListarUsuariosUseCase;
+import br.com.cleanarchitecture.crud.application.usecases.CriarUsuarioUseCase;
+import br.com.cleanarchitecture.crud.application.usecases.ListarUsuariosUseCase;
 import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/usuarios")
-public class UsuarioController {
+public class UsuarioController implements UsuarioAPI {
 
     private final CriarUsuarioUseCase criarUsuarioUseCase;
     private final ListarUsuariosUseCase listarUsuariosUseCase;
@@ -20,7 +20,7 @@ public class UsuarioController {
         this.listarUsuariosUseCase = listarUsuariosUseCase;
     }
 
-    @PostMapping
+    @Override
     public UsuarioResponseDto cadastrarUsuario(@RequestBody UsuarioRequestDto dto) {
         Usuario usuario = new Usuario(
                 dto.cpf(),
@@ -35,7 +35,7 @@ public class UsuarioController {
 
     }
 
-    @GetMapping
+    @Override
     public List<UsuarioResponseDto> listarUsuarios() {
         List<Usuario> listar=listarUsuariosUseCase.listarUsuarios();
         return listar.stream()

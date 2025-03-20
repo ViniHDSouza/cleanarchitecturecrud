@@ -76,7 +76,7 @@ O projeto está organizado em camadas, cada uma com responsabilidades bem defini
 
 * `br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuariosGateway`: Define a interface para acessar o repositório de dados.
 * Isola os casos de uso dos detalhes de persistência.
-* `br.com.cleanarchitecture.crud.adapter.gateways.RepositorioDeUsuarioJPAGatewayImpl`: Implementa a interface `RepositorioDeUsuarios` usando JPA.
+* `br.com.cleanarchitecture.crud.adapter.gatewaysImpl.RepositorioDeUsuarioJPAGatewayImpl`: Implementa a interface `RepositorioDeUsuarios` usando JPA.
 * Adapta os dados do domínio para o formato do banco de dados e vice-versa.
 * `UsuarioEntityMapper`: Mapeia a entidade do domínio para a entidade do banco de dados.
 

@@ -1,7 +1,7 @@
 package br.com.cleanarchitecture.crud.adapter.config;
 
 
-import br.com.cleanarchitecture.crud.adapter.gateways.RepositorioDeUsuarioJPAGatewayImpl;
+import br.com.cleanarchitecture.crud.adapter.gatewaysImpl.RepositorioDeUsuarioJPAGatewayImpl;
 import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuariosGateway;
 import br.com.cleanarchitecture.crud.application.usecases.CriarUsuarioUseCase;
 import br.com.cleanarchitecture.crud.application.usecases.ListarUsuariosUseCase;

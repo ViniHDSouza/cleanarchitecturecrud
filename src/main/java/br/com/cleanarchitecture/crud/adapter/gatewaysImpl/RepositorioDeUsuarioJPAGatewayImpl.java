@@ -1,4 +1,4 @@
-package br.com.cleanarchitecture.crud.adapter.gateways;
+package br.com.cleanarchitecture.crud.adapter.gatewaysImpl;
 
 import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuariosGateway;
 import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;

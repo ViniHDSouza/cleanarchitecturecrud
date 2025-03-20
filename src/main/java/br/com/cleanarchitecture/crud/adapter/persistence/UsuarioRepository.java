@@ -1,4 +1,4 @@
-package br.com.cleanarchitecture.crud.infra.persistence;
+package br.com.cleanarchitecture.crud.adapter.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

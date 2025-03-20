@@ -1,4 +1,4 @@
-package br.com.cleanarchitecture.crud.infra.controller;
+package br.com.cleanarchitecture.crud.adapter.controller;
 
 import br.com.cleanarchitecture.crud.application.usecases.CriarUsuarioUseCase;
 import br.com.cleanarchitecture.crud.application.usecases.ListarUsuariosUseCase;

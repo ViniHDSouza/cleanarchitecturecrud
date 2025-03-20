@@ -35,6 +35,7 @@ public class Usuario {
         this.nascimento = nascimento;
         this.email = new Email(email);
         this.telefone = new Telefone(telefone);
+        validadeIdadeUsuario(nascimento);
     }
 
     public Usuario() {}

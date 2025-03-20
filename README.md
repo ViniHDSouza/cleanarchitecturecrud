@@ -76,7 +76,7 @@ O projeto está organizado em camadas, cada uma com responsabilidades bem defini
 
 * `br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuarios`: Define a interface para acessar o repositório de dados.
 * Isola os casos de uso dos detalhes de persistência.
-* `br.com.cleanarchitecture.crud.infra.gateways.RepositorioDeUsuarioJPA`: Implementa a interface `RepositorioDeUsuarios` usando JPA.
+* `br.com.cleanarchitecture.crud.adapter.gateways.RepositorioDeUsuarioJPA`: Implementa a interface `RepositorioDeUsuarios` usando JPA.
 * Adapta os dados do domínio para o formato do banco de dados e vice-versa.
 * `UsuarioEntityMapper`: Mapeia a entidade do domínio para a entidade do banco de dados.
 
@@ -88,8 +88,8 @@ O projeto está organizado em camadas, cada uma com responsabilidades bem defini
 ### 4. Frameworks e Drivers (Frameworks & Drivers)
 
 * `br.com.cleanarchitecture.crud.application.controller.UsuarioController`: Lida com as requisições HTTP e utiliza DTOs (`UsuarioRequestDto` e `UsuarioResponseDto`).
-* `br.com.cleanarchitecture.crud.infra.persistence.UsuarioEntity` e `br.com.cleanarchitecture.crud.infra.persistence.UsuarioRepository`: Implementação do banco de dados usando JPA.
-* `br.com.cleanarchitecture.crud.infra.config.UsuarioConfig`: Classe de configuração do Spring para injeção de dependência.
+* `br.com.cleanarchitecture.crud.adapter.persistence.UsuarioEntity` e `br.com.cleanarchitecture.crud.adapter.persistence.UsuarioRepository`: Implementação do banco de dados usando JPA.
+* `br.com.cleanarchitecture.crud.adapter.config.UsuarioConfig`: Classe de configuração do Spring para injeção de dependência.
 * `br.com.cleanarchitecture.crud.CrudApplication`: Classe que inicializa o Spring Boot.
 
 **Observações:**

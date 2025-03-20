@@ -1,7 +1,7 @@
-package br.com.cleanarchitecture.crud.infra.presenters;
+package br.com.cleanarchitecture.crud.adapter.presenters;
 
 import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;
-import br.com.cleanarchitecture.crud.infra.persistence.UsuarioEntity;
+import br.com.cleanarchitecture.crud.adapter.persistence.UsuarioEntity;
 
 public class UsuarioEntityMapper {
 

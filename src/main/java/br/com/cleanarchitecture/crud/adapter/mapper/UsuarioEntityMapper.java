@@ -1,8 +1,9 @@
-package br.com.cleanarchitecture.crud.adapter.presenters;
+package br.com.cleanarchitecture.crud.adapter.mapper;
 
-import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;
 import br.com.cleanarchitecture.crud.adapter.persistence.UsuarioEntity;
+import br.com.cleanarchitecture.crud.core.domain.entities.usuario.Usuario;
 
+//Não considero como "presenter", e sim como mapper. Mas cabe uma analise do conceito
 public class UsuarioEntityMapper {
 
     public UsuarioEntity toEntity(Usuario usuario){

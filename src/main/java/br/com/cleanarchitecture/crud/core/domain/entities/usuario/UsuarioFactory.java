@@ -1,8 +1,8 @@
-package br.com.cleanarchitecture.crud.domain.entities.usuario;
-
-import br.com.cleanarchitecture.crud.domain.vo.Endereco;
+package br.com.cleanarchitecture.crud.core.domain.entities.usuario;
 
 import java.time.LocalDate;
+
+import br.com.cleanarchitecture.crud.core.domain.vo.Endereco;
 
 public interface UsuarioFactory {
     Usuario criarUsuario(String nome, String cpf, LocalDate nascimento, String email, String telefone);

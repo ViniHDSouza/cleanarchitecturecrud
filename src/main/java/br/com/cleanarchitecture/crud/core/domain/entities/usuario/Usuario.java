@@ -1,16 +1,17 @@
-package br.com.cleanarchitecture.crud.domain.entities.usuario;
+package br.com.cleanarchitecture.crud.core.domain.entities.usuario;
 
-import br.com.cleanarchitecture.crud.domain.vo.CPF;
-import br.com.cleanarchitecture.crud.domain.vo.Email;
-import br.com.cleanarchitecture.crud.domain.vo.Endereco;
-import br.com.cleanarchitecture.crud.domain.vo.Telefone;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Setter
+import br.com.cleanarchitecture.crud.core.domain.vo.CPF;
+import br.com.cleanarchitecture.crud.core.domain.vo.Email;
+import br.com.cleanarchitecture.crud.core.domain.vo.Endereco;
+import br.com.cleanarchitecture.crud.core.domain.vo.Telefone;
+
+@Setter//FIXME: Não usar setter (em nenhuma classe)
 @Getter
 @EqualsAndHashCode
 public class Usuario {
@@ -23,6 +24,7 @@ public class Usuario {
     private Telefone telefone;
     private Endereco endereco;
 
+    //Se aumentar a qnt de contrutor, considere usar um factory
     public Usuario(Integer id,String cpf, String nome, LocalDate nascimento, String email, String telefone) {
         this(cpf, nome, nascimento, email, telefone);
         this.id = id;
@@ -43,7 +45,7 @@ public class Usuario {
     private void validadeIdadeUsuario(LocalDate nascimento) {
         boolean valida = LocalDate.now().getYear() - nascimento.getYear() >= 18;
         if (!valida) {
-            throw new IllegalArgumentException("Usuario menor de idade");
+            throw new IllegalArgumentException("Usuario menor de idade");//FIXME: criar uma exceção especifica
         }
     }
 

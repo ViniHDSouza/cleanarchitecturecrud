@@ -2,6 +2,8 @@ package br.com.cleanarchitecture.crud.domain.vo;
 
 import org.junit.jupiter.api.Test;
 
+import br.com.cleanarchitecture.crud.core.domain.vo.CEP;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CEPTest {

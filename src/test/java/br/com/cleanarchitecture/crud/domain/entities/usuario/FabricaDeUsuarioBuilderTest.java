@@ -2,8 +2,12 @@ package br.com.cleanarchitecture.crud.domain.entities.usuario;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import br.com.cleanarchitecture.crud.domain.vo.Endereco;
 import org.junit.jupiter.api.Test;
+
+import br.com.cleanarchitecture.crud.core.domain.entities.usuario.Usuario;
+import br.com.cleanarchitecture.crud.core.domain.entities.usuario.UsuarioBuilderFactory;
+import br.com.cleanarchitecture.crud.core.domain.entities.usuario.UsuarioFactory;
+import br.com.cleanarchitecture.crud.core.domain.vo.Endereco;
 
 import java.time.LocalDate;
 

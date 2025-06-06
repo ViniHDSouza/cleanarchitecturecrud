@@ -1,4 +1,4 @@
-package br.com.cleanarchitecture.crud.domain.vo;
+package br.com.cleanarchitecture.crud.core.domain.vo;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

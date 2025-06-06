@@ -1,15 +1,15 @@
-package br.com.cleanarchitecture.crud.adapter.gatewaysImpl;
-
-import br.com.cleanarchitecture.crud.application.gateways.RepositorioDeUsuariosGateway;
-import br.com.cleanarchitecture.crud.domain.entities.usuario.Usuario;
-import br.com.cleanarchitecture.crud.adapter.persistence.UsuarioEntity;
-import br.com.cleanarchitecture.crud.adapter.persistence.UsuarioRepository;
-import br.com.cleanarchitecture.crud.adapter.presenters.UsuarioEntityMapper;
+package br.com.cleanarchitecture.crud.adapter.gateway;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RepositorioDeUsuarioJPAGatewayImpl implements RepositorioDeUsuariosGateway {
+import br.com.cleanarchitecture.crud.adapter.mapper.UsuarioEntityMapper;
+import br.com.cleanarchitecture.crud.adapter.persistence.UsuarioEntity;
+import br.com.cleanarchitecture.crud.adapter.persistence.UsuarioRepository;
+import br.com.cleanarchitecture.crud.core.domain.entities.usuario.Usuario;
+import br.com.cleanarchitecture.crud.core.gateways.UsuarioGateway;
+
+public class RepositorioDeUsuarioJPAGatewayImpl implements UsuarioGateway {
 
     private final UsuarioRepository usuarioRepository;
     private final UsuarioEntityMapper usuarioEntityMapper;
@@ -29,12 +29,11 @@ public class RepositorioDeUsuarioJPAGatewayImpl implements RepositorioDeUsuarios
     @Override
     public List<Usuario> listarTodos() {
 
-        List<Usuario> usuarios = usuarioRepository
+        return usuarioRepository
                 .findAll()
                 .stream()
                 .map(usuarioEntityMapper::toDomain)
                 .collect(Collectors.toList());
 
-        return usuarios;
     }
 }

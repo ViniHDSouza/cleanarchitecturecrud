@@ -1,8 +1,8 @@
-package br.com.cleanarchitecture.crud.domain.entities.usuario;
-
-import br.com.cleanarchitecture.crud.domain.vo.Endereco;
+package br.com.cleanarchitecture.crud.core.domain.entities.usuario;
 
 import java.time.LocalDate;
+
+import br.com.cleanarchitecture.crud.core.domain.vo.Endereco;
 
 // refatorar para implementar o padrao Abstract Factory
 public class FabricaDeUsuarioBuilder {

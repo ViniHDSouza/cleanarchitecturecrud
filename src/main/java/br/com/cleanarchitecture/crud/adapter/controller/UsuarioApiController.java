@@ -1,5 +1,6 @@
 package br.com.cleanarchitecture.crud.adapter.controller;
 
+import br.com.cleanarchitecture.crud.adapter.mapper.UsuarioEntityMapper;
 import br.com.cleanarchitecture.crud.core.domain.entities.usuario.Usuario;
 import br.com.cleanarchitecture.crud.core.usecases.CriarUsuarioUseCase;
 import br.com.cleanarchitecture.crud.core.usecases.ListarUsuariosUseCase;
@@ -29,18 +30,9 @@ public class UsuarioApiController implements UsuarioController {
     @PostMapping
     public UsuarioResponseDto cadastrarUsuario(@RequestBody UsuarioRequestDto dto) {
 
-    	//TODO: Deve ter uma classe mapper de DTO para Domain
-    	Usuario usuario = new Usuario(
-                dto.cpf(),
-                dto.nome(),
-                dto.nascimento(),
-                dto.email(),
-                dto.telefone());
-
+        Usuario usuario = UsuarioEntityMapper.toDomain(dto);
         Usuario salvo = criarUsuarioUseCase.cadastrarUsuario(usuario);
-
-        //TODO: Deve ter uma classe mapper de DTO para Domain
-        return new UsuarioResponseDto(salvo.getId(),salvo.getCpf().toString(), salvo.getNome(), salvo.getNascimento(), salvo.getEmail().toString(),salvo.getTelefone().toString());
+        return UsuarioEntityMapper.toResponseDto(salvo);
     }
 
     @Override
@@ -48,7 +40,7 @@ public class UsuarioApiController implements UsuarioController {
     public List<UsuarioResponseDto> listarUsuarios() {
         List<Usuario> listar=listarUsuariosUseCase.listarUsuarios();
         return listar.stream()
-                .map(usuario -> new UsuarioResponseDto(usuario.getId(), usuario.getCpf().toString(), usuario.getNome(),usuario.getNascimento(), usuario.getEmail().toString(),usuario.getTelefone().toString()))
+                .map(UsuarioEntityMapper::toResponseDto)
                 .collect(Collectors.toList());
     }
 }

@@ -1,5 +1,6 @@
 package br.com.cleanarchitecture.crud.core.domain.entities.usuario;
 
+import br.com.cleanarchitecture.crud.adapter.exception.UsuarioMenorIdadeException;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +12,7 @@ import br.com.cleanarchitecture.crud.core.domain.vo.Email;
 import br.com.cleanarchitecture.crud.core.domain.vo.Endereco;
 import br.com.cleanarchitecture.crud.core.domain.vo.Telefone;
 
-@Setter//FIXME: Não usar setter (em nenhuma classe)
+
 @Getter
 @EqualsAndHashCode
 public class Usuario {
@@ -45,8 +46,11 @@ public class Usuario {
     private void validadeIdadeUsuario(LocalDate nascimento) {
         boolean valida = LocalDate.now().getYear() - nascimento.getYear() >= 18;
         if (!valida) {
-            throw new IllegalArgumentException("Usuario menor de idade");//FIXME: criar uma exceção especifica
+            throw new UsuarioMenorIdadeException();
         }
     }
 
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 }

@@ -1,5 +1,6 @@
 package br.com.cleanarchitecture.crud.core.domain.vo;
 
+import br.com.cleanarchitecture.crud.core.exception.CPFInvalidoException;
 import lombok.Getter;
 
 @Getter
@@ -9,7 +10,7 @@ public class CPF {
 
     public CPF(String document) {
         if (document == null || !document.matches("\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")) {
-            throw new IllegalArgumentException("CPF no padrão incorreto!");//FIXME: lançar exception especificar
+            throw new CPFInvalidoException();
         }
         this.document = document;
     }
